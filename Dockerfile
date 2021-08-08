@@ -13,11 +13,17 @@ ENV RIG "None"
 RUN mkdir PCMiner_2.55_resources
 RUN apt-get update
 RUN apt-get install wget -y
-#RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/PC_Miner.py
+RUN apt install python3 python3-pip git python3-pil python3-pil.imagetk
+
+RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/PC_Miner.py
+RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/requirements.txt
 COPY PC_Miner.py .
-WORKDIR /PCMiner_2.55_resources
-#RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/Resources/PC_Miner_langs.json
-COPY langs.json .
+COPY requirements.txt .
+RUN python3 -m pip install -r requirements.txt
+
+WORKDIR /PCMiner_resources
+RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/Resources/PC_Miner_langs.json
+COPY PC_Miner_langs.json ./langs.json
 WORKDIR /
 
 # COPY START UP SCRIPT
