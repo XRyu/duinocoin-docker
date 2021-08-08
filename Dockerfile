@@ -13,7 +13,7 @@ ENV RIG "None"
 RUN mkdir PCMiner_resources
 RUN apt-get update
 RUN apt-get install wget -y
-RUN apt install python3 python3-pip git python3-pil python3-pil.imagetk
+RUN apt install python3 python3-pip git python3-pil python3-pil.imagetk -y
 
 RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/PC_Miner.py
 RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/requirements.txt
