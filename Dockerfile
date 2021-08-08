@@ -22,8 +22,8 @@ COPY requirements.txt .
 RUN python3 -m pip install -r requirements.txt
 
 WORKDIR /PCMiner_resources
-RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/Resources/PC_Miner_langs.json
-COPY PC_Miner_langs.json ./langs.json
+RUN wget https://raw.githubusercontent.com/revoxhere/duino-coin/master/Resources/PC_Miner_langs.json ./langs.json
+#COPY PC_Miner_langs.json ./langs.json
 WORKDIR /
 
 # COPY START UP SCRIPT
