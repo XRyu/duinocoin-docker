@@ -1,4 +1,5 @@
 #!/bin/sh
+mkdir PCMiner_resources
 
 # Edit the config file
 echo "[Duino-Coin-PC-Miner]
