@@ -1,5 +1,4 @@
 #!/bin/sh
-mkdir PCMiner_resources
 
 # Edit the config file
 echo "[Duino-Coin-PC-Miner]
@@ -14,7 +13,7 @@ language = english
 debug = n
 soc_timeout = 45
 discord_presence = y
-shuffle_ports = y" > PCMiner_resources/Miner_config.cfg
+shuffle_ports = y" > Miner_config.cfg
 
 # Start the miner
 python PC_Miner.py
