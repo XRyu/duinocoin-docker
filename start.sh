@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "Move to: "&(find -type d . -name "PCMiner_*")&"/Miner_config.cfg"
 # Edit the config file
 echo "[Duino-Coin-PC-Miner]
 username = ${USERNAME}
@@ -13,7 +14,7 @@ language = english
 debug = n
 soc_timeout = 45
 discord_presence = y
-shuffle_ports = y" > Miner_config.cfg
+shuffle_ports = y" > (find -type d . -name "PCMiner_*")/Miner_config.cfg
 
 # Start the miner
 python PC_Miner.py
