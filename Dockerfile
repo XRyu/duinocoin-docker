@@ -16,6 +16,7 @@ RUN apt install python3 python3-pip git python3-pil python3-pil.imagetk -y # Ins
 RUN git clone https://github.com/revoxhere/duino-coin # Clone Duino-Coin repository
 WORKDIR /duino-coin
 RUN python3 -m pip install -r requirements.txt # Install pip dependencies
+RUN python3 -m pip install xxhash
 
 # COPY START UP SCRIPT
 COPY start.sh .
