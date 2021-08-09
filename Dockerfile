@@ -21,7 +21,7 @@ RUN python3 -m pip install -r requirements.txt # Install pip dependencies
 COPY start.sh .
 # Fix permissions so the file can be executed
 RUN chmod +x start.sh
-
+RUN sed -i 's/RESOURCES_DIR = "PCMiner_" + str(MINER_VER) + "_resources"/RESOURCES_DIR = "PCMiner_resources"/g' PC_Miner.py
 # RUN START UP SCRIPT
 CMD ["./start.sh"]
 
